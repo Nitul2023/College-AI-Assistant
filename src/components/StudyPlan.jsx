@@ -89,3 +89,5 @@ export function StudyPlan({ marks, attendance }) {
     </div>
   );
 }
+
+export default StudyPlan;
