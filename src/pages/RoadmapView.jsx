@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { CheckCircle, Circle, Clock, BookOpen, ExternalLink, ChevronDown, ChevronUp, Target, Award } from 'lucide-react';
 import skillsService from '../services/skillsService';
 
-export function RoadmapView() {
+export default function RoadmapView() {
   const [roadmaps, setRoadmaps] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedSteps, setExpandedSteps] = useState({});
