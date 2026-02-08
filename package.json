@@ -18,9 +18,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start"
+}
+
   "engines": {
     "node": "24.0.0"
   }
