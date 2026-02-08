@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Plus, Trash2, CheckCircle, ArrowRight, ArrowLeft, BookOpen, Calendar, GraduationCap } from 'lucide-react';
 import apiService from '../services/apiService';
 
-export function OnboardingWizard() {
+export default function OnboardingWizard() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
