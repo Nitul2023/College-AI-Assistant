@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { LogIn, Mail, Lock, Sparkles } from 'lucide-react';
-import authService from '../services/authService';
+import authService from '../services/authService';;
 
 export default function Login() {
   const [email, setEmail] = useState('');
