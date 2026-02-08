@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { LogIn, Mail, Lock, Sparkles } from 'lucide-react';
-import authService from '../services/authService';;
+import { login, signup, logout } from './services/authService';
 
 export default function Login() {
   const [email, setEmail] = useState('');
