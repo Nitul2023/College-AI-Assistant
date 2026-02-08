@@ -473,3 +473,6 @@ export default function OnboardingWizard() {
     </div>
   );
 }
+
+// At the end
+export default OnboardingWizard;
