@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { useRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { LogIn, Mail, Lock, Sparkles } from 'lucide-react';
+import authService from '../services/authService';
 
-export default function Login() {
+export function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -105,3 +105,6 @@ export default function Login() {
     </div>
   );
 }
+
+// IMPORTANT: Also add default export for compatibility
+export default Login;
