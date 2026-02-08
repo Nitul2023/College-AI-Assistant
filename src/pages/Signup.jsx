@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { UserPlus, Mail, Lock, User, Hash, BookOpen, Calendar, Sparkles } from 'lucide-react';
-import authService from '../services/authService';
+import { login, signup, logout } from './services/authService';
 
 export default function Signup() {
   const [formData, setFormData] = useState({
