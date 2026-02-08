@@ -241,4 +241,4 @@ export default function RoadmapView() {
 }
 
 // At the end
-export default OnboardingWizard;
+export default RoadmapView;
