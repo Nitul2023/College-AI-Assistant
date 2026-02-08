@@ -436,4 +436,4 @@ export default function Dashboard() {
   );
 }
 // At the end
-export default OnboardingWizard;
+export default Dashboard;
