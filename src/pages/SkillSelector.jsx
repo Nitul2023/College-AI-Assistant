@@ -38,7 +38,7 @@ const CAREER_GOALS = [
   { id: 'Game Developer', icon: Star, color: 'yellow' }
 ];
 
-export function SkillSelector() {
+export default function SkillSelector() {
   const [step, setStep] = useState(1); // 1: Goal, 2: Skills, 3: Level
   const [selectedGoal, setSelectedGoal] = useState('');
   const [selectedSkills, setSelectedSkills] = useState([]);
