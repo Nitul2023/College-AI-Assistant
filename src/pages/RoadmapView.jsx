@@ -239,3 +239,6 @@ export default function RoadmapView() {
     </div>
   );
 }
+
+// At the end
+export default OnboardingWizard;
