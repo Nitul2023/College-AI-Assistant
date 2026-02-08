@@ -1,8 +1,6 @@
 import axios from 'axios';
 import API_URL from '../config/api';
 
-const API_BASE = API_URL; // Remove the /api suffix from here since it's in config
-
 // Signup
 export const signup = async (userData) => {
   const response = await axios.post(`${API_BASE}/auth/signup`, userData);
