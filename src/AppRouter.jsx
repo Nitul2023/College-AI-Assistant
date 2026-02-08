@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Login } from './pages/Login';
-import { Signup } from './pages/Signup';
-import { OnboardingWizard } from './pages/OnboardingWizard';
-import { Dashboard } from './pages/Dashboard';
-import { SkillSelector } from './pages/SkillSelector'; // NEW
-import { RoadmapView } from './pages/RoadmapView'; // NEW
-import { ProtectedRoute } from './components/ProtectedRoute';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import OnboardingWizard from './pages/OnboardingWizard';
+import Dashboard from './pages/Dashboard';
+import SkillSelector from './pages/SkillSelector';
+import RoadmapView from './pages/RoadmapView';
+import ProtectedRoute from './components/ProtectedRoute';
 import authService from './services/authService';
 
 function AppRouter() {
@@ -42,7 +42,7 @@ function AppRouter() {
         }
       />
       
-      {/* NEW: Skills & Roadmap Routes */}
+      {/* Skills & Roadmap Routes */}
       <Route
         path="/skills"
         element={
