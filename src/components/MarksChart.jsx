@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -31,3 +32,4 @@ export function MarksChart({ data }) {
     </div>
   );
 }
+export default MarksChar;
