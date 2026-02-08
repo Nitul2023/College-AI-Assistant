@@ -8,7 +8,6 @@ import { StudyPlan } from '../components/StudyPlan';
 import { TimetableGrid } from '../components/TimetableGrid';
 import { PerformanceSummary } from '../components/PerformanceSummary';
 import { TamboService } from '../services/tamboService';
-import authService from '../services/authService';
 import apiService from '../services/apiService';
 
 const tamboService = new TamboService();
