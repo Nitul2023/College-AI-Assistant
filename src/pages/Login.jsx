@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { LogIn, Mail, Lock, Sparkles } from 'lucide-react';
 import authService from '../services/authService';
 
-export function Login() {
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
