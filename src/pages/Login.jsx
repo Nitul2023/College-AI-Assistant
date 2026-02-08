@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
+import { useRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { LogIn, Mail, Lock, Sparkles } from 'lucide-react';
 import authService from '../services/authService';;
 
