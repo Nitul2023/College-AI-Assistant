@@ -1,116 +1,59 @@
 export class TamboService {
   
-  // Smart keyword-based AI decision (works offline)
   async decideComponent(userMessage, chatHistory = []) {
-    return new Promise((resolve) => {
-      // Simulate AI thinking (makes it feel real)
-      setTimeout(() => {
-        const decision = this.analyzeMessage(userMessage);
-        resolve(decision);
-      }, 800); // 800ms delay to simulate AI processing
-    });
-  }
+    // Simulate AI processing delay
+    await new Promise(resolve => setTimeout(resolve, 800));
 
-  analyzeMessage(userMessage) {
-    const msg = userMessage.toLowerCase();
-    
-    // Attendance keywords
-    if (this.matchesKeywords(msg, [
-      'attendance', 'present', 'absent', 'classes attended', 
-      'how many classes', 'class percentage', 'attended'
-    ])) {
+    const message = userMessage.toLowerCase();
+
+    // Keyword matching for component selection
+    if (message.includes('attendance') || message.includes('present') || message.includes('absent')) {
       return {
         component: 'attendance',
-        reasoning: 'Showing your attendance records across all subjects'
+        reasoning: 'Showing your attendance records based on your query about attendance.'
       };
     }
-    
-    // Marks keywords
-    if (this.matchesKeywords(msg, [
-      'marks', 'score', 'grades', 'chart', 'performance',
-      'exam', 'test', 'results', 'academic'
-    ])) {
+
+    if (message.includes('marks') || message.includes('grades') || message.includes('score')) {
       return {
         component: 'marks',
-        reasoning: 'Displaying your marks in visual chart format'
+        reasoning: 'Displaying your marks and grades as you requested.'
       };
     }
-    
-    // Weak subjects keywords
-    if (this.matchesKeywords(msg, [
-      'weak', 'struggling', 'low', 'failing', 'bad',
-      'need attention', 'improve', 'problem', 'issue'
-    ])) {
+
+    if (message.includes('weak') || message.includes('struggling') || message.includes('difficult')) {
       return {
         component: 'weak',
-        reasoning: 'Identifying subjects that need your attention'
+        reasoning: 'Analyzing subjects where you need improvement based on your performance.'
       };
     }
-    
-    // Study plan keywords
-    if (this.matchesKeywords(msg, [
-      'study', 'plan', 'prepare', 'strategy', 'exam prep',
-      'how to study', 'preparation', 'schedule'
-    ])) {
+
+    if (message.includes('study plan') || message.includes('study') || message.includes('plan')) {
       return {
         component: 'study',
-        reasoning: 'Creating a personalized study plan for you'
+        reasoning: 'Creating a personalized study plan to help you improve.'
       };
     }
-    
-    // Timetable keywords
-    if (this.matchesKeywords(msg, [
-      'timetable', 'schedule', 'classes', 'timing', 'when',
-      'today', 'tomorrow', 'weekly', 'calendar'
-    ])) {
+
+    if (message.includes('timetable') || message.includes('schedule') || message.includes('classes')) {
       return {
         component: 'timetable',
-        reasoning: 'Showing your weekly class timetable'
+        reasoning: 'Showing your class timetable and schedule.'
       };
     }
-    
-    // Summary/Overall keywords
-    if (this.matchesKeywords(msg, [
-      'summary', 'overall', 'performance', 'dashboard',
-      'status', 'overview', 'everything', 'complete'
-    ])) {
+
+    if (message.includes('performance') || message.includes('summary') || message.includes('overview')) {
       return {
         component: 'summary',
-        reasoning: 'Displaying your complete academic overview'
+        reasoning: 'Displaying your overall academic performance summary.'
       };
     }
-    
-    // Default fallback
+
+    // Default to summary
     return {
       component: 'summary',
-      reasoning: 'Here\'s your academic dashboard. Try asking about attendance, marks, or study plans!'
+      reasoning: 'Showing your overall performance summary. You can ask about specific topics like attendance, marks, or study plans.'
     };
   }
-
-  // Helper function to match keywords
-  matchesKeywords(message, keywords) {
-    return keywords.some(keyword => message.includes(keyword));
-  }
-
-  // Advanced: Analyze intent based on question structure
-  analyzeIntent(message) {
-    const msg = message.toLowerCase();
-    
-    // Question patterns
-    if (msg.startsWith('show') || msg.startsWith('display')) {
-      if (msg.includes('attendance')) return 'attendance';
-      if (msg.includes('marks') || msg.includes('grades')) return 'marks';
-      if (msg.includes('timetable') || msg.includes('schedule')) return 'timetable';
-    }
-    
-    if (msg.startsWith('what') || msg.startsWith('which')) {
-      if (msg.includes('weak') || msg.includes('struggling')) return 'weak';
-    }
-    
-    if (msg.startsWith('create') || msg.startsWith('make') || msg.startsWith('help')) {
-      if (msg.includes('study') || msg.includes('plan')) return 'study';
-    }
-    
-    return null;
-  }
 }
+
