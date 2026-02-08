@@ -435,3 +435,5 @@ export default function Dashboard() {
     </div>
   );
 }
+// At the end
+export default OnboardingWizard;
