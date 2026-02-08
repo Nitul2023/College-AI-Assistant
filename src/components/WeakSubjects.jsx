@@ -70,3 +70,4 @@ export function WeakSubjects({ attendance, marks }) {
     </div>
   );
 }
+export default WeakSubjects;
