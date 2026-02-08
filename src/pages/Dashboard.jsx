@@ -13,7 +13,7 @@ import apiService from '../services/apiService';
 
 const tamboService = new TamboService();
 
-export function Dashboard() {
+export default function Dashboard() {
   const [input, setInput] = useState('');
   const [currentView, setCurrentView] = useState('summary');
   const [chatHistory, setChatHistory] = useState([]);
