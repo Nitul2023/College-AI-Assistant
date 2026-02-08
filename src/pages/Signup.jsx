@@ -205,3 +205,6 @@ export default function Signup() {
     </div>
   );
 }
+
+// At the very end of the file, after the closing brace
+export default Signup;
