@@ -11,3 +11,6 @@ export function ProtectedRoute({ children }) {
 
   return children;
 }
+
+// At the end
+export default ProtectedRoute;
