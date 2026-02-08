@@ -329,3 +329,5 @@ export default function SkillSelector() {
     </div>
   );
 }
+
+export default SkillSelector;
