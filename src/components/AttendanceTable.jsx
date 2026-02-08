@@ -63,3 +63,5 @@ export function AttendanceTable({ data }) {
     </div>
   );
 }
+
+export default AttendanceTable;
