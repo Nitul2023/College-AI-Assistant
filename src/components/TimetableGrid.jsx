@@ -63,3 +63,4 @@ export function TimetableGrid({ data }) {
     </div>
   );
 }
+export default TimetableGrid;
