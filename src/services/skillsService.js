@@ -1,53 +1,47 @@
 import axios from 'axios';
-import authService from './authService';
+import API_URL from '../config/api';
 
-const API_URL = 'http://localhost:5000/api/skills';
+const getToken = () => localStorage.getItem('token');
 
 const api = axios.create({
-  baseURL: API_URL
+  baseURL: API_URL,
 });
 
-// Add token to requests
 api.interceptors.request.use((config) => {
-  const token = authService.getToken();
+  const token = getToken();
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
 });
 
-class SkillsService {
-  
-  async getSkills() {
-    const response = await api.get('/');
-    return response.data;
-  }
+export const getSkills = async () => {
+  const response = await api.get('/skills');
+  return response.data;
+};
 
-  async addSkills(skills) {
-    const response = await api.post('/', { skills });
-    return response.data;
-  }
+export const addSkills = async (skills) => {
+  const response = await api.post('/skills', { skills });
+  return response.data;
+};
 
-  async generateRoadmap(goal, selectedSkills, level = 'Beginner') {
-    const response = await api.post('/generate-roadmap', {
-      goal,
-      selectedSkills,
-      level
-    });
-    return response.data;
-  }
+export const generateRoadmap = async (goal, skills, level) => {
+  const response = await api.post('/skills/generate-roadmap', {
+    goal,
+    skills,
+    level,
+  });
+  return response.data;
+};
 
-  async getRoadmaps() {
-    const response = await api.get('/roadmaps');
-    return response.data;
-  }
+export const getRoadmaps = async () => {
+  const response = await api.get('/skills/roadmaps');
+  return response.data;
+};
 
-  async updateStepCompletion(roadmapId, stepIndex, completed) {
-    const response = await api.put(`/roadmaps/${roadmapId}/steps/${stepIndex}`, {
-      completed
-    });
-    return response.data;
-  }
-}
-
-export default new SkillsService();
+export const updateStepCompletion = async (roadmapId, stepIndex, completed) => {
+  const response = await api.put(`/skills/roadmaps/${roadmapId}/steps/${stepIndex}`, {
+    completed,
+  });
+  return response.data;
+};
