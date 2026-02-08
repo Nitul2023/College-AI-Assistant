@@ -94,3 +94,4 @@ export function PerformanceSummary({ attendance, marks, profile }) {
     </div>
   );
 }
+export default PerformanceSummary;
