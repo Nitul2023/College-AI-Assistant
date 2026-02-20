@@ -6,6 +6,13 @@ const connectDB = require('./config/db');
 
 const app = express();
 
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://college-ai-assistant.vercel.app",
+  credentials: true
+}));
+
 /* ------------------ Database ------------------ */
 connectDB();
 
